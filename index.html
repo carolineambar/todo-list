@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oxygen+Mono&display=swap" rel="stylesheet">
+  <title>To Do List</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="lateralMenu">
+      <div class="menuTitleWrapper">
+        <h1 class="menuTitle">Categorias</h1>
+        
+        <button type="button" class="menuAddButton">
+          <img src="./Icons/menuAddButton.svg">
+        </button>
+      </div>
+    </nav>
+    
+    <div class="container">
+      <div class="titleWrapper">
+        <h1 class="title">Tarefas de Casa</h1>
+        
+        <button type="button" class="addButton" data-add-button>
+          <img src="./Icons/addButton.svg">
+        </button>
+      </div>
+      
+      <ul data-list class="cardList"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

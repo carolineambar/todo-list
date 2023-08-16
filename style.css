@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+ display: flex;
+}
+
+/* ---------------------------------CONTAINER----------------------------------- */
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 7.12rem;
+  flex-grow: 1;
+}
+
+.titleWrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.title {
+  color: #9381FF;
+  font-size: 2.625rem;
+}
+
+.addButton {
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+}
+
+/* -------------------------------------UL---------------------------------- */
+
+.item {
+  list-style: none;
+}
+
+.checkbox {
+  display: none;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: row;
+  max-height: 600px;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 924px;
+  justify-content: flex-start;
+
+}
+
+.card {
+  align-items: center;
+  background-color: #B8B8FF;
+  border-radius: 12px;
+  color: #ffff;
+  display: flex;
+  gap: 8px;
+  max-width: 300px;
+  padding: 16px;
+}
+
+.checkField {
+  align-items: center;
+  background-color: #F8F7FF;
+  border-radius: 4px;
+  display: flex;
+  height: 16px;
+  justify-content: center;
+  width: 16px;
+}
+
+.image {
+  display: none;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+
+/* -------------------------------------COMBINED---------------------------------- */
+
+.checkbox:checked + .card {
+  background-color: rgba(161, 161, 161, 0.67);
+  color: #50514F;
+  text-decoration: line-through;
+}
+
+.checkbox:checked + .card .checkField {
+  background-color: #A1A1A1;
+}
+
+.checkbox:checked + .card .image {
+  display: block;
+}
+
+/* -------------------------------------NEW---------------------------------- */
+
+.checkbox__text {
+  background-color: transparent;
+  flex-grow: 1;
+  border: 0;
+  outline: 0;
+  color: inherit;
+}
+
+.checkbox__text:focus {
+  background-color: transparent;
+}
+
+/* -------------------------------------MENU LATERAL---------------------------------- */
+
+.lateralMenu {
+  background-color: #9381FF;
+  width: 22.5625rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menuTitleWrapper {
+  border-bottom-right-radius: 16px;
+  display: flex;
+  gap: 1.875rem;
+  justify-content: center;
+  padding-bottom: 3.8125rem;
+  padding-left: 4.1875rem;
+  padding-right: 2.75rem;
+  padding-top: 2.6875rem;
+}
+
+.menuTitle {
+  color: #FFFFFF;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.menuAddButton {
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+}
