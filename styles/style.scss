@@ -1,3 +1,5 @@
+@import './_variables.scss';
+
 * {
   border-style: none;
   box-sizing: border-box;
@@ -12,7 +14,7 @@
 }
 
 .sideMenu {
-  background-color: #9381FF;
+  background-color: $purple;
   width: 22.5625rem;
   display: flex;
   flex-direction: column;
@@ -29,7 +31,7 @@
     padding-top: 2.6875rem;
 
     &--title {
-      color: #FFFFFF;
+      color: $white;
       font-size: 2.25rem;
       font-weight: 700;
     }
@@ -37,9 +39,9 @@
 
   &__category {
     align-items: center;
-    background-color: #9381FF;
+    background-color: $purple;
     border-radius: 16px 0px 0px 16px;
-    color: #fff;
+    color: $white;
     cursor: pointer;
     display: flex;
     font-size: 20px;
@@ -47,23 +49,44 @@
     gap: 10px;
     justify-content: flex-start;
     padding: 14.5px 44px;
+    position: relative;
   
     &--active {
-      background-color: #FFFFFF;
-      color: #9381FF;
+      background-color: $white;
+      color: $purple;
+
+      &::before, &::after {
+        position: absolute;
+        content: '';
+        background-image: url(../Icons/roundedCorner.svg);
+        width: 16px;
+        height: 16px;
+        right: 0;
+      }
+
+      &::before {
+        top: -16px;
+      }
+
+      &::after {
+        bottom: -16px;
+        transform: rotate(-90deg);
+        z-index: 1;
+      }
+      
       
     }
   
     &__counter {
-      background-color: #fff;
+      background-color: $white;
       border-radius: 4px;
-      color: #9381FF;
+      color: $purple;
       font-size: 12px;
       padding: 2px 10px;
   
       &--active {
-        background-color: #9381FF;
-        color:#FFFFFF;
+        background-color: $purple;
+        color: $white;
       }
     }
   }
@@ -82,13 +105,14 @@
   gap: 48px;
   padding-top: 7.12rem;
   flex-grow: 1;
+  background-color: $white;
 
   &__titleWrapper {
     display: flex;
     gap: 16px;
   
     &--title {
-      color: #9381FF;
+      color: $purple;
       font-size: 2.625rem;
     }
   }
@@ -104,9 +128,9 @@
   
     &--card {
       align-items: center;
-      background-color: #B8B8FF;
+      background-color: $purple;
       border-radius: 12px;
-      color: #ffff;
+      color: $white;
       display: flex;
       gap: 8px;
       max-width: 300px;
@@ -132,13 +156,13 @@
   }
 
   &:checked + .container__cardList--card {
-    background-color: rgba(161, 161, 161, 0.67);
-    color: #50514F;
+    background-color: $grey-300;
+    color: $grey-400;
     text-decoration: line-through;
   }
   
   &:checked + .container__cardList--card .checkField {
-    background-color: #A1A1A1;
+    background-color: $grey-200;
   }
   
   &:checked + .container__cardList--card .image {
@@ -148,7 +172,7 @@
 
 .checkField {
   align-items: center;
-  background-color: #F8F7FF;
+  background-color: $white;
   border-radius: 4px;
   display: flex;
   height: 16px;

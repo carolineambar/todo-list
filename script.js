@@ -1,6 +1,14 @@
 const button = document.querySelector('[data-add-button]')
 const list = document.querySelector('[data-list]')
 
+const categories = [
+  {
+    category: "Tarefas de Casa",
+    itemList: "",
+    itemCheck: ""
+  },
+]
+
 const createItemList = (id) => {
   const item = document.createElement('li')
   item.setAttribute('data-item', id)
