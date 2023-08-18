@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
+  <link href="./public/style.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oxygen+Mono&display=swap" rel="stylesheet">
@@ -12,26 +12,39 @@
 
 <body>
   <div class="wrapper">
-    <nav class="lateralMenu">
-      <div class="menuTitleWrapper">
-        <h1 class="menuTitle">Categorias</h1>
+    <nav class="sideMenu">
+      <div class="sideMenu__titleWrapper">
+        <h2 class="sideMenu__titleWrapper--title">Categorias</h2>
         
-        <button type="button" class="menuAddButton">
+        <button type="button" class="addButton">
           <img src="./Icons/menuAddButton.svg">
         </button>
       </div>
+
+      <ul>
+        <li>
+          <button class="sideMenu__category sideMenu__category--active">Tarefas de Casa
+            <span class="sideMenu__category__counter sideMenu__category__counter--active">1/4</span>
+          </button>
+        </li>
+        <li>
+          <button class="sideMenu__category">Tarefas de Casa
+            <span class="sideMenu__category__counter">1/4</span>
+          </button>
+        </li>
+      </ul>
     </nav>
     
     <div class="container">
-      <div class="titleWrapper">
-        <h1 class="title">Tarefas de Casa</h1>
+      <div class="container__titleWrapper">
+        <h1 class="container__titleWrapper--title">Tarefas de Casa</h1>
         
         <button type="button" class="addButton" data-add-button>
           <img src="./Icons/addButton.svg">
         </button>
       </div>
       
-      <ul data-list class="cardList"></ul>
+      <ul data-list class="container__cardList"></ul>
     </div>
   </div>
   <script src="script.js"></script>

@@ -17,7 +17,7 @@ const createItemList = (id) => {
     <input class="checkbox__text" />
   `
   label.setAttribute('for',`item-${id}`)
-  label.classList.add('card')
+  label.classList.add('container__cardList--card')
 
   const deleteButton = document.createElement('button')
   deleteButton.classList.add('deleteButton')
