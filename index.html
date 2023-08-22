@@ -16,19 +16,21 @@
       <div class="sideMenu__titleWrapper">
         <h2 class="sideMenu__titleWrapper--title">Categorias</h2>
         
-        <button type="button" class="addButton">
+        <button type="button" class="addButton" data-add-categories>
           <img src="./Icons/menuAddButton.svg">
         </button>
       </div>
 
-      <ul>
+      <ul data-categories>
         <li>
-          <button class="sideMenu__category sideMenu__category--active">Tarefas de Casa
-            <span class="sideMenu__category__counter sideMenu__category__counter--active">1/4</span>
+          <button class="sideMenu__category sideMenu__category--active">
+            <input class="navInput" value="Tarefas de Casa">
+            <span class="sideMenu__category__counter">1/4</span>
           </button>
         </li>
         <li>
-          <button class="sideMenu__category">Tarefas de Casa
+          <button class="sideMenu__category">
+            <input class="navInput" value="Tarefas de Casa">
             <span class="sideMenu__category__counter">1/4</span>
           </button>
         </li>
@@ -37,7 +39,7 @@
     
     <div class="container">
       <div class="container__titleWrapper">
-        <h1 class="container__titleWrapper--title">Tarefas de Casa</h1>
+        <h1 class="container__titleWrapper--title" data-category-title>Tarefas de Casa</h1>
         
         <button type="button" class="addButton" data-add-button>
           <img src="./Icons/addButton.svg">

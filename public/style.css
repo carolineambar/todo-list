@@ -11,6 +11,15 @@
   display: flex;
 }
 
+.navInput {
+  background-color: transparent;
+  font-size: 1.25rem;
+  width: 100%;
+  font-weight: 700;
+  outline: none;
+  color: inherit;
+}
+
 .sideMenu {
   background-color: #9381FF;
   width: 22.5625rem;
@@ -46,6 +55,7 @@
   justify-content: flex-start;
   padding: 14.5px 44px;
   position: relative;
+  width: 18.75rem;
 }
 .sideMenu__category--active {
   background-color: #F8F7FF;
@@ -67,16 +77,16 @@
   transform: rotate(-90deg);
   z-index: 1;
 }
+.sideMenu__category--active .sideMenu__category__counter {
+  background-color: #9381FF;
+  color: #F8F7FF;
+}
 .sideMenu__category__counter {
   background-color: #F8F7FF;
   border-radius: 4px;
   color: #9381FF;
   font-size: 12px;
   padding: 2px 10px;
-}
-.sideMenu__category__counter--active {
-  background-color: #9381FF;
-  color: #F8F7FF;
 }
 
 .addButton {
