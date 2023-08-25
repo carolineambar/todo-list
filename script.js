@@ -18,7 +18,7 @@ const categories = [
  // },
 ]
 
-const createItemList = (id) => {
+const createItemList = (id, text='') => {
   const item = document.createElement('li')
   item.setAttribute('data-item', id)
   item.classList.add('item')
@@ -27,14 +27,28 @@ const createItemList = (id) => {
   `
 
   const label = document.createElement('label')
+  label.setAttribute('for', `item-${id}`)
+  label.classList.add('container__cardList--card')
   label.innerHTML = `
     <div class="checkField">
         <img class="image" src="./Icons/checkmark.png"/>
     </div>
-    <input class="checkbox__text" />
   `
-  label.setAttribute('for',`item-${id}`)
-  label.classList.add('container__cardList--card')
+
+  const inputField = document.createElement('input')
+  inputField.classList.add('checkbox__text')
+  inputField.value = text
+
+  inputField.addEventListener('keyup', (e) => {
+    const currentCategoryElement = document.querySelector('.sideMenu__category--active');
+    const currentCategoryId = Number(currentCategoryElement.dataset.id);
+    const currentCategory = categories.find((category) => category.id === currentCategoryId);
+
+    const itemIndex = currentCategory.items.findIndex((item) => item.id === id);
+    currentCategory.items[itemIndex].item = e.target.value;
+  })
+
+  label.appendChild(inputField)
 
   const deleteButton = document.createElement('button')
   deleteButton.classList.add('deleteButton')
@@ -47,6 +61,7 @@ const createItemList = (id) => {
   label.appendChild(deleteButton)
   item.appendChild(label)
   return item
+
 } 
 
 button.addEventListener('click', () => {
@@ -65,10 +80,20 @@ button.addEventListener('click', () => {
     checked: false,
   })
 
-
   console.log(categories)
   inputField.focus();
 })
+
+const loadCategoryItems = () => {
+  list.innerHTML=''
+  const currentCategoryElement = document.querySelector('.sideMenu__category--active');
+  const currentCategory = categories.find((category) => category.id === Number(currentCategoryElement.dataset.id))
+  currentCategory.items.forEach((item) => {
+      console.log('loadid', item.id)
+      const element = createItemList(item.id, item.item)
+      list.prepend(element)
+  })
+}
 
 const handleActiveCategory = (categoryElement, currentCategory) => {
   categoriesList.childNodes.forEach((categoryNode) => {
@@ -78,6 +103,7 @@ const handleActiveCategory = (categoryElement, currentCategory) => {
     }
   })
   categoryElement.querySelector('.sideMenu__category').classList.add('sideMenu__category--active')
+  loadCategoryItems()
 }
 
 const createCategoryElement = (element) => {
@@ -97,7 +123,6 @@ const createCategoryElement = (element) => {
   categoryButton.innerHTML = `
     <span class="sideMenu__category__counter">1/4</span>
   `
-
   categoriesList.childNodes.forEach((categoryNode) => {
     if(categoryNode.classList) {
       categoryNode.querySelector('.sideMenu__category').classList.remove('sideMenu__category--active')
@@ -109,8 +134,6 @@ const createCategoryElement = (element) => {
   categoryButton.classList.add('sideMenu__category--active')
   categoryButton.prepend(categoryInput)
   categoryElement.appendChild(categoryButton)
-
-
 
   return categoryElement
 }
